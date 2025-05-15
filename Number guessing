@@ -1,0 +1,21 @@
+import random
+print("Welcome to the number guessing game!!""\n you have 5 chances guess the correct number.")
+low=int(input("enter the lower bound:"))
+high=int(input("enter the upper bound:"))
+print(f"you have 5 chances to guess the number between {low} and {high} Let's start.")
+num=random.randint(low,high)
+chances=5       #Total number of chances
+guesses=0         #Guess counter
+while guesses<chances:
+    guesses+=1
+    guess=int(input("enter your guess:"))
+
+    if guess==num:
+        print(f"Correct! the number is {num} you have guessed it in {guesses} attempt!")
+        break
+    elif guess>num:
+        print("predicted number is big compared to current number")
+    elif guess<num:
+        print("predicted number is small compared to current number")
+    elif guesses<=chances and guesses!=num:
+        print(f"Sorry the number was {num}. Better luck next time!.")
